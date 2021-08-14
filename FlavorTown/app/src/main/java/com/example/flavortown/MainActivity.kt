@@ -8,6 +8,7 @@ import androidmads.library.qrgenearator.QRGEncoder
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -32,9 +33,11 @@ class MainActivity : ComponentActivity() {
             FlavorTownTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                    //QrCode(generateQrCode("blah blah", 480))
-                    QrCode(generateNayukiQrCode("blah blah"))
+                    Column() {
+                        Greeting("FlavorTown!")
+                        QrCode(generateQrCode("blah blah", 480))
+                        QrCode(generateNayukiQrCode("blah blah"))
+                    }
                 }
             }
         }
